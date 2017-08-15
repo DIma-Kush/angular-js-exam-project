@@ -10,6 +10,10 @@
     display: block;
   }
   /*edit/delete buttons  */
+.tableHead>tr>th:first-child + th + th + th + th{
+   width: 70px;   
+}
+  /*edit/delete buttons  */
 .tableHead>tr>th:first-child + th + th + th{
    width: 80px;   
 }

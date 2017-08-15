@@ -5,7 +5,7 @@
         "Controllers",
         'ui.router',
         'ui.bootstrap',
-        'ngTouch',
+        'ngResource'
     ]);
 
     // Routing START  
@@ -16,13 +16,13 @@
                     .state("mainList", {
                         url: '/mainList',
                         templateUrl: 'app/templates/mainList.html'
-                      
+
                     })
                     .state("favorites", {
                         url: '/favorites',
                         templateUrl: 'app/templates/addSong.html'
-                    
-                    })    
+
+                    })
                 $urlRouterProvider.otherwise('/mainList');
             }
         ])
@@ -37,13 +37,32 @@
 
         ]);
 
-        app.factory('AlbumService', function ($http) {
-        return {
-            getList: function () {
-                return ;
-            }
-        };
-    });
+    app.factory('albumService', ['$resource', function ($resource) {
+        return $resource('/albums/all', {}, {
+             get: {
+          method: 'GET',
+          isArray: true,
+          transformResponse: function(data) {
+            var arr = [];
+            var data_obj = JSON.parse(data);
+            _.each(data_obj, function(obj){
+              arr.push(obj);
+            });
+            return arr;
+          }
+        },
+        count: {
+            method: 'GET',
+            url: '/albums/count',
+              interceptor: {
+                    response: function (response) {
+                        // expose response
+                        return response;
+                    }
+                }
+        }
+        });
+    }]);
 
-    
+
 })();

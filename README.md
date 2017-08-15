@@ -6,6 +6,10 @@ sub tasks planning:
 - modify Gruntfile.js, add minify css/js (and probably merge)
 - work with Karma and Jasmine
 - Release 
+
+Promo(15.08.17):
+<img src="src/html/img/preview.JPG" alt="page preview">
+
 ## Required Technologies
  - [AngularJS](https://angularjs.org/)
  - [Twitter Bootstrap](http://getbootstrap.com/)

@@ -1,26 +1,34 @@
 <div class="mainPanel" ng-controller="MainListCtrl">
-    <h2>Listen your favourite music!</h2>
-    <div class="panel">
+    <article>
+        <h3>Listen your favourite music!</h3>
+        <!-- <h3>Listen your favourite music!</h3> -->
+        <h2>available songs: {{count}}</h2>
+    </article>
+    <section class="panel">
         <table class="table table-hover">
             <thead class="tableHead">
                 <tr>
-                    <th>Name</th>
-                    <th>Artist</th>
-                    <th>Price</th>
+                    <th ng-click="sortBy('name')">Name</th>
+                    <th ng-click="sortBy('name')">Artist</th>
+                    <th ng-click="sortBy('integer')">Price</th>
+                    <th ng-click="sortBy('integer')">Year</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="tableBody">
-                <tr class="tableElement">
+            <tbody class="tableBody" on-scroll-to-bottom="addSongs()">
+                <tr class="tableElement" ng-repeat="song in albums | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse track by $index">
                     <td>
                         <img class="musicLogo" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
-                        <p>It Ain't me</p>
+                        <p>{{song.title}}</p>
                     </td>
                     <td>
-                        <p>Selena Gomez</p>
+                        <p>{{song.artist}}</p>
                     </td>
                     <td>
-                        <p>12.0</p>
+                        <p>{{song.price}}</p>
+                    </td>
+                    <td>
+                        <p>{{song.year}}</p>
                     </td>
                     <td>
                         <!--trigger when tablet screen  -->
@@ -36,12 +44,14 @@
                     </td>
 
                 </tr>
-                
+
             </tbody>
         </table>
-    </div>
-      <div class="input-group  panel-footer">
-        <input class="form-control" ng-model="main.TaskName"> <span class="input-group-btn">
-                <button class="btn btn-default">Search</button>
-               </span> </div>
+    </section>
+    <footer class="input-group  panel-footer">
+        <input placeholder="search" class="form-control" data-ng-model="search"> <span class="input-group-btn">
+                <button class="btn btn-default btnMore" ng-click="limitMin = limitMin + 50">More</button>
+                <button class="btn btn-default" ng-click="limitMin = limitMin - 50">Less</button>
+               </span> 
+    </footer>
 </div>

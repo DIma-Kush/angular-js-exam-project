@@ -7,7 +7,8 @@
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .container-fluid {
     background-color: gainsboro;
@@ -52,6 +53,9 @@ body {
     background: rgb(100, 57, 96) !important;
     transition: 1s !important;
     border: none !important;
+}
+.btnMore{
+    background: rgb(234, 134, 68) !important;
 }
 
 .label-danger {
@@ -98,19 +102,25 @@ body {
 .mainPanel{
     min-height: 550px;
 }
-.mainPanel>h2{
+.mainPanel>article {
     margin: 0px;
     padding-top: 20px;
     text-align: center;
 }
-
+.mainPanel>article>h3 {
+    margin-top: 0px !important;
+}
 .panel{
     margin: 15px 0px 15px 15px;
-    height: 71vh;
+    margin-bottom: 0px !important;
+    height: 66vh;
     overflow-x: hidden;
 }
 .tableBody{
   overflow-y: scroll;
+}
+.tableHead{
+    cursor: default;
 }
 /*song name  */
 .tableHead>tr>th:first-child{
@@ -126,11 +136,14 @@ body {
    width: 50px;
    
 }
-/*edit/delete buttons  */
+/*date */
 .tableHead>tr>th:first-child + th + th + th{
-   width: 150px;   
+   width: 60px;   
 }
-
+/*edit/delete buttons  */
+.tableHead>tr>th:first-child + th + th + th + th{
+   width: 115px;   
+}
 .tableElement{
     cursor: pointer;    
 }
