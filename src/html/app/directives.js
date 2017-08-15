@@ -1,8 +1,8 @@
-(function(){
+(function () {
 
-"use strict";
+    "use strict";
     var app = angular.module("site-directives", []);
-    
+
     app.directive("siteHeader", function () {
         return {
             restrict: "AE",
@@ -48,5 +48,3 @@
 
 
 })();
-
-  

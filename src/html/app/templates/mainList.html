@@ -1,0 +1,47 @@
+<div class="mainPanel" ng-controller="MainListCtrl">
+    <h2>Listen your favourite music!</h2>
+    <div class="panel">
+        <table class="table table-hover">
+            <thead class="tableHead">
+                <tr>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+                <tr class="tableElement">
+                    <td>
+                        <img class="musicLogo" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
+                        <p>It Ain't me</p>
+                    </td>
+                    <td>
+                        <p>Selena Gomez</p>
+                    </td>
+                    <td>
+                        <p>12.0</p>
+                    </td>
+                    <td>
+                        <!--trigger when tablet screen  -->
+                        <div class="buttons">
+                            <button class="btn btn-default pull-right">Delete</button>
+                            <button class="btn btn-default  pull-right">Edit</button>
+                        </div>
+                        <!--trigger when mobile screen  -->
+                        <div class="icons">
+                            <img src="img/edit.png" alt="edit">
+                            <img src="img/recycleBin.png" alt="del">
+                        </div>
+                    </td>
+
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+      <div class="input-group  panel-footer">
+        <input class="form-control" ng-model="main.TaskName"> <span class="input-group-btn">
+                <button class="btn btn-default">Search</button>
+               </span> </div>
+</div>

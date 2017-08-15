@@ -1,5 +1,11 @@
 # FrontEnd developer Test
-
+## Dima Kush notes 
+sub tasks planning:
+- 15.08.17 - creating html layout, routing and directives
+- creating operating angular function(add, edit show, delete)
+- modify Gruntfile.js, add minify css/js (and probably merge)
+- work with Karma and Jasmine
+- Release 
 ## Required Technologies
  - [AngularJS](https://angularjs.org/)
  - [Twitter Bootstrap](http://getbootstrap.com/)

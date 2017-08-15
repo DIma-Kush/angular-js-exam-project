@@ -15,25 +15,13 @@
                 $stateProvider
                     .state("mainList", {
                         url: '/mainList',
-                        templateUrl: 'app/templates/mainPage.html'
-                        // views: {
-                        //     'mainPage@parent': {
-                        //         templateUrl: '../app/templates/mainPage.html'
-                        //     }
-                        // },
-                        // resolve: {
-                        // }
+                        templateUrl: 'app/templates/mainList.html'
+                      
                     })
                     .state("favorites", {
                         url: '/favorites',
-                        templateUrl: 'app/templates/favorites.html'
-                        // views: {
-                        //     'favorites@mainContainer': {
-                                
-                        //     }
-                        // },
-                        // resolve: {
-                        // }
+                        templateUrl: 'app/templates/addSong.html'
+                    
                     })    
                 $urlRouterProvider.otherwise('/mainList');
             }
@@ -48,5 +36,14 @@
             }
 
         ]);
+
+        app.factory('AlbumService', function ($http) {
+        return {
+            getList: function () {
+                return ;
+            }
+        };
+    });
+
     
 })();

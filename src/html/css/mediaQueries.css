@@ -1,6 +1,18 @@
 /*tablet  */
 @media (max-width: 767px) { 
-
+  .panel{
+    margin: 15px 5px;
+  }
+    .buttons{
+    display: none;
+  }
+  .icons{
+    display: block;
+  }
+  /*edit/delete buttons  */
+.tableHead>tr>th:first-child + th + th + th{
+   width: 80px;   
+}
   .userSideBar {
     display: none;
   }
@@ -13,6 +25,12 @@
 }
 /*desktop  */
 @media (min-width: 768px) {
+  .buttons{
+    display: block;
+  }
+  .icons{
+    display: none;
+  }
   .navbar-brand {
     display: block !important ;
   }
