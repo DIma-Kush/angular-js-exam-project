@@ -46,7 +46,10 @@ node_modules
 
 # sftp configuration file
 sftp-config.json
-
+#Directories
+bower_components/
+node_modules/
+bower_components/
 
 ###Linux###
 

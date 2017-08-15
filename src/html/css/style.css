@@ -1,0 +1,100 @@
+/*GENERAL START*/
+
+#wrapper {
+    overflow-x: hidden;
+    position: fixed;
+}
+body {
+    background: #f2f2f2;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+.container-fluid {
+    background-color: gainsboro;
+}
+
+.custom-container {
+    margin-top: 65px;
+}
+.classWithPad {
+    margin: -5px;
+    background-color: white;
+    /*padding:1px; */
+}
+/*GENERAL END*/
+/* Navigation header START*/
+
+.navbar {
+    background: rgb(17, 17, 17) !important;
+}
+
+.navbarToggleMasc {
+    border-radius: 0px !important;
+}
+
+.btn-default {
+    font-family: Helvetica !important;
+    color: white !important;
+    background: rgb(169, 109, 163)!important;
+    border: none !important;
+    border-radius: 0 !important;
+    text-shadow: none !important;
+    /*font-size: 12px !important;*/
+}
+
+.btn-default:hover {
+    background: rgb(100, 57, 96) !important;
+    transition: 1s !important;
+    border: none !important;
+}
+
+.label-danger {
+    background: gray !important;
+}
+
+.label-primary {
+    background: #201d1d !important;
+}
+.mineNavbar {
+    margin: 7.5px 0px !important;
+}
+/* Navigation header END*/
+/* Navigation main START*/
+.userSideBar {
+    /*height: 100vh;*/
+}
+
+.asideNavbar li:hover {
+    background-color: gainsboro;
+    width: 100%;
+}
+
+.asideNavbar li {
+    background-color: white;
+    width: 100%;
+}
+
+.asideNavbar>li>a {
+    font-size: 14px;
+}
+
+.asideNavbar ul {
+    /*background-color: whitesmoke;*/
+    width: 100px;
+}
+
+.userNavbar {
+    box-shadow: none !important;
+    border-color: whitesmoke !important;
+}
+/* Navigation main END*/
+/*Main BODY START  */
+.mainPanel{
+    min-height: 550px;
+}
+.mainPanel>h2{
+    margin: 0px;
+    padding-top: 20px;
+    text-align: center;
+}
+/*Main BODY END  */

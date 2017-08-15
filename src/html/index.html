@@ -1,1 +1,61 @@
-<h1>Create your page here</h1>
+<!DOCTYPE html>
+<html lang="en" ng-app="musicShop">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Title -->
+    <title>Lemberg Music</title>
+    <!--CSS START  -->
+    <!--Normalize.css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--user styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mediaQueries.css">
+    <!--libs syles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
+    <!--CSS END  -->
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+<body ng-cloak>
+
+<div id="wrappper">
+    <div class="container-fluid">
+        <div class="container custom-container">
+            <div class="row">
+                <!--Header-->
+                <site-header></site-header>
+                <!--Navigation-->
+                <site-sidebar></site-sidebar>
+                <!--Main body-->
+                <site-router></site-router>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--Script Libs START-->
+    <!-- jQuery (only for libs!)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Bootstrap  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--AngularJs  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.4/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <!--user scripts  -->
+    <!--App-->
+    <script src="app/app.js"></script>
+    <!--Controllers/Directives-->
+    <script src="app/controllers/navigation.controller.js"></script>
+    <script src="app/controllers/mainController.controler.js"></script>
+    <script src="app/directives.js"></script>
+    <!--Scripts Libs END  -->
+</body>
+
+</html>

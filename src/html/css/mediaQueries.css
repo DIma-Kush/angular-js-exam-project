@@ -1,0 +1,48 @@
+/*tablet  */
+@media (max-width: 767px) { 
+
+  .userSideBar {
+    display: none;
+  }
+  .navbar-brand {
+    display: none !important ;
+  }
+  .headerName {
+    display: inline;
+  }
+}
+/*desktop  */
+@media (min-width: 768px) {
+  .navbar-brand {
+    display: block !important ;
+  }
+  .headerName,
+  .arrowLeftMobile {
+    display: none !important;
+  }
+  .arrowLeftMobile {
+    display: none;
+  }
+  .headerName {
+    display: none;
+  }
+  .MobileUserSideBar {
+    display: none;
+  } 
+}
+/*extra small  */
+@media (max-width: 460px) {
+  .mainRouter {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+

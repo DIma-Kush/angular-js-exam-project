@@ -1,0 +1,26 @@
+<header class="navbar navbar-inverse navbarTop navbar-fixed-top">
+  <div class="container containerHeader">
+    <div class="navbar-header nabvarHeaderMine">
+      <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true" data-target="#responsive-menu">
+                      <span class="sr-only">Open navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+      <a ui-sref="mainList" class="navbar-brand">Lemberg Music</a>
+      <a class="headerName" ui-sref="mainList"></a>
+    </div>
+    <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <div class="MobileUserSideBar">
+            <ul class="nav navbar-nav mineNavbar">
+              <li><a ui-sref="mainContainer.mainList">Music list</a></li>
+              <li><a ui-sref="mainContainer.favorites">Favorites</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
