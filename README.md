@@ -2,13 +2,14 @@
 ## Dima Kush notes 
 sub tasks planning:
 - 15.08.17 - creating html layout, routing and directives
-- creating operating angular function(add, edit show, delete)
+- 16.08.17 - 17.08.17 creating operating angular function(add, edit show, delete)
 - modify Gruntfile.js, add minify css/js (and probably merge)
 - work with Karma and Jasmine
 - Release 
 
-Promo(15.08.17):
+Promo(16.08.17):
 <img src="src/html/img/preview.JPG" alt="page preview">
+<img src="src/html/img/preview_detail.JPG" alt="page preview">
 
 ## Required Technologies
  - [AngularJS](https://angularjs.org/)

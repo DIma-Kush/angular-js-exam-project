@@ -16,32 +16,34 @@
                 </tr>
             </thead>
             <tbody class="tableBody">
-                <tr class="tableElement" ng-click="albumDetailClick(song.id)" ng-repeat="song in albums.value  
+                <tr class="tableElement" href="#!/albums/{{song.id}}" ng-click="albumDetailClick(song.id)" ng-repeat="song in albums.value  
                     | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse 
                         track by song.id">
-                        <td>
-                            <img class="musicLogo" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
-                            <p>{{song.title}}</p>
-                        </td>
-                        <td>
-                            <p>{{song.price}}</p>
-                        </td>
+                    <td>
+                      <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
+                        
+                        <p>{{song.title}}</p>
+                    </td>
+                    <td>
                         <p>{{song.artist}}</p>
-                        </td>
-                        <td>
-                            <td>
-                                <p>{{song.year}}</p>
-                            </td>
-                 
+                    </td>
+                    <td>
+                        <p>{{song.price}}</p>
+                    </td>
+
+                    <td>
+                        <p>{{song.year}}</p>
+                    </td>
+
                     <td>
                         <!--trigger when tablet screen  -->
                         <div class="buttons">
                             <button class="btn btn-default pull-right">Delete</button>
-                            <button class="btn btn-default  pull-right" ng-click="$event.stopPropagation();editAlbumClick()">Edit</button>
+                            <button class="btn btn-default  pull-right" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick('editMode')">Edit</button>
                         </div>
                         <!--trigger when mobile screen  -->
                         <div class="icons">
-                            <img src="img/edit.png" alt="edit" ng-click="$event.stopPropagation();editAlbumClick()">
+                            <img src="img/edit.png" alt="edit" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick('editMode')">
                             <img src="img/recycleBin.png" alt="del">
                         </div>
                     </td>
@@ -53,8 +55,8 @@
     </section>
     <footer class="input-group  panel-footer">
         <input placeholder="search" class="form-control" data-ng-model="search"> <span class="input-group-btn">
-                <button class="btn btn-default btnMore" ng-click="limitMin = limitMin + 50">More</button>
-                <button class="btn btn-default" ng-click="limitMin = limitMin - 50">Less</button>
+                <button class="btn btn-default btnMore" ng-click="clickMore()">More</button>
+                <button class="btn btn-default" ng-click="clickLess()">Less</button>
                </span>
     </footer>
 </div>

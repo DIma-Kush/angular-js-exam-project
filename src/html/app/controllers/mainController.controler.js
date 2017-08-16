@@ -24,9 +24,10 @@
             value: ''
         }; 
 
-        $scope.editAlbumClick = function(){
-            console.log($scope.curAlbum.value);
-            $state.go('albumEdit');
+        $scope.editAlbumClick = function(flag){
+            $scope.flag = flag;
+            $scope.curAlbum.value = null;
+            // $state.go('albumAddEdit');
         }
 
         $scope.currState = $state; //save current state
@@ -36,8 +37,11 @@
                  $scope.title = "Songs List";
                     break;
                 case 'albumDetail': // if albumDetail checked or reloaded
-                  $scope.title = $scope.curAlbum.value.title;
+                //   $scope.title = $scope.curAlbum.value.title;
                     break;
+                case 'albumAddEdit':
+                 $scope.curAlbum.value = null; // reset on reload
+                break;
             }
         });
 

@@ -23,7 +23,7 @@
           <div class="MobileUserSideBar">
             <ul class="nav navbar-nav mineNavbar">
               <li><a ui-sref="mainList">Music list</a></li>
-              <li><a ui-sref="addAlbum">Add album</a></li>
+              <li><a ui-sref-opts="{reload: true}"  ui-sref="albumAddEdit" ng-click="editAlbumClick('addMode')">Add album</a></li>
             </ul>
           </div>
         </li>

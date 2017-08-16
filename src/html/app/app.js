@@ -23,11 +23,6 @@
                         }
 
                     })
-                    .state("addAlbum", {
-                        url: '/addAlbum',
-                        templateUrl: 'app/templates/albumAdd.html'
-
-                    })
                     .state("albumDetail", {
                         url: '/albumDetail',
                         templateUrl: 'app/templates/albumDetail.html',
@@ -37,9 +32,9 @@
                             }]
                         }
                     })
-                    .state("albumEdit", {
-                        url: '/albumEdit',
-                        templateUrl: 'app/templates/albumEdit.html'
+                    .state("albumAddEdit", {
+                        url: '/albumAddEdit',
+                        templateUrl: 'app/templates/albumAddEdit.html'
                     })
                 $urlRouterProvider.otherwise('/mainList');
             }

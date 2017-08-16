@@ -3,8 +3,22 @@
         $scope, albumService, storageService, $state
     ) {
         'use strict';
-        // save current state and watch it change
         $scope.limitMin = 50; // limit to loaded albums by default
+        $scope.clickMore = function () {
+            if ($scope.limitMin >= $scope.count || $scope.limitMin == 400) {
+                $scope.limitMin = $scope.count;
+            } else {
+                $scope.limitMin += 50;
+            }
+        }
+        $scope.clickLess = function () {
+            if ($scope.limitMin <= 0 || $scope.limitMin == 50) {
+                $scope.limitMin = 50;
+            } else {
+                $scope.limitMin -= 50;
+            }
+
+        }
 
         // scopes for sorting
         $scope.propertyName = 'integer';
