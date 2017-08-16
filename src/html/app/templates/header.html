@@ -7,18 +7,23 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
+
       <a ui-sref="mainList" class="navbar-brand">
-        Lemberg Music  
-      <img class="logo" src="img/logo.png" alt="logo"></a>
-      <a class="headerName" ui-sref="mainList"></a>
+        <p> Lemberg Music </p>
+        <img class="logo" src="img/logo.png" alt="logo"></a>
+      <a ng-click="goBack()">
+        <figure class="arrowLeftMobile"></figure>
+      </a>
+      <a class="headerName" ng-bind="title">{{curAlbum.value.title}}</a>
     </div>
+
     <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <div class="MobileUserSideBar">
             <ul class="nav navbar-nav mineNavbar">
-              <li><a ui-sref="mainContainer.mainList">Music list</a></li>
-              <li><a ui-sref="mainContainer.favorites">Add song</a></li>
+              <li><a ui-sref="mainList">Music list</a></li>
+              <li><a ui-sref="addAlbum">Add album</a></li>
             </ul>
           </div>
         </li>

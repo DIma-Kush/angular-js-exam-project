@@ -2,7 +2,7 @@
     <article>
         <h3>Listen your favourite music!</h3>
         <!-- <h3>Listen your favourite music!</h3> -->
-        <h2>available songs: {{count}}</h2>
+        <h2>available albums: {{count}}</h2>
     </article>
     <section class="panel">
         <table class="table table-hover">
@@ -15,18 +15,21 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="tableBody" on-scroll-to-bottom="addSongs()">
-                <tr class="tableElement" ng-repeat="song in albums | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse track by $index">
+            <tbody class="tableBody">
+                <tr class="tableElement"  ng-click="albumDetail(song.id)"
+                ng-repeat="song in albums.value  
+                    | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse 
+                        track by song.id">
                     <td>
                         <img class="musicLogo" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
                         <p>{{song.title}}</p>
                     </td>
                     <td>
+                        <p>{{song.price}}</p>
+                    </td>
                         <p>{{song.artist}}</p>
                     </td>
                     <td>
-                        <p>{{song.price}}</p>
-                    </td>
                     <td>
                         <p>{{song.year}}</p>
                     </td>

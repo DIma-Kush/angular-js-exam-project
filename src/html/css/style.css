@@ -4,12 +4,14 @@
     overflow-x: hidden;
     position: fixed;
 }
+
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 .container-fluid {
     background-color: gainsboro;
 }
@@ -17,62 +19,77 @@ body {
 .custom-container {
     margin-top: 65px;
 }
+
 .classWithPad {
     margin: -5px;
     background-color: white;
     /*padding:1px; */
 }
+
+
 /*GENERAL END*/
+
+
 /* Navigation header START*/
-.logo{
+
+.logo {
     height: 30px;
     width: auto;
     object-fit: cover;
     float: left;
     margin-right: 10px;
 }
+
 .navbar {
     background: rgb(17, 17, 17) !important;
 }
 
+.navbar-brand>p {
+    display: inline-block;
+}
+
 .navbarToggleMasc {
     border-radius: 0px !important;
+     pointer-events: all;
+}
+.nabvarHeaderMine{
+    height: 50px;
+    text-align: center;
+    pointer-events: none;
+}
+.arrowLeftMobile {
+    background-image: url("../img/arrowLeftWhite.png");
+    background-size: cover;
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+     pointer-events: all;
 }
 
-.btn-default {
-    font-family: Helvetica !important;
-    color: white !important;
-    background: rgb(169, 109, 163)!important;
-    border: none !important;
-    border-radius: 0 !important;
-    text-shadow: none !important;
-    /*font-size: 12px !important;*/
+.headerName {
+    position: relative;
+    top: -35px;
+    color: white;
+    font-weight: 600;
 }
 
-.btn-default:hover {
-    background: rgb(100, 57, 96) !important;
-    transition: 1s !important;
-    border: none !important;
-}
-.btnMore{
-    background: rgb(234, 134, 68) !important;
+.headerName:hover,
+.headerName:focus {
+    color: white;
+    text-decoration: none;
 }
 
-.label-danger {
-    background: gray !important;
-}
-
-.label-primary {
-    background: #201d1d !important;
-}
 .mineNavbar {
     margin: 7.5px 0px !important;
 }
+
+
 /* Navigation header END*/
+
+
 /* Navigation main START*/
-.userSideBar {
-    /*height: 100vh;*/
-}
 
 .asideNavbar li:hover {
     background-color: gainsboro;
@@ -97,69 +114,99 @@ body {
     box-shadow: none !important;
     border-color: whitesmoke !important;
 }
+
+
 /* Navigation main END*/
+
+
 /*Main BODY START  */
-.mainPanel{
+
+.mainPanel {
     min-height: 550px;
 }
+
 .mainPanel>article {
     margin: 0px;
     padding-top: 20px;
     text-align: center;
+    white-space: nowrap;
 }
+
 .mainPanel>article>h3 {
     margin-top: 0px !important;
 }
-.panel{
+
+.panel {
     margin: 15px 0px 15px 15px;
     margin-bottom: 0px !important;
     height: 66vh;
     overflow-x: hidden;
 }
-.tableBody{
-  overflow-y: scroll;
+
+.tableBody {
+    overflow-y: scroll;
 }
-.tableHead{
+
+.tableHead {
     cursor: default;
 }
-/*song name  */
-.tableHead>tr>th:first-child{
 
-}
+
+/*song name  */
+
+.tableHead>tr>th:first-child {}
+
+
 /*artist  */
-.tableHead>tr>th:first-child + th{
-   width: 130px;
-   
+
+.tableHead>tr>th:first-child+th {
+    width: 130px;
 }
+
+
 /*song price  */
-.tableHead>tr>th:first-child + th + th{
-   width: 50px;
-   
+
+.tableHead>tr>th:first-child+th+th {
+    width: 50px;
 }
+
+
 /*date */
-.tableHead>tr>th:first-child + th + th + th{
-   width: 60px;   
+
+.tableHead>tr>th:first-child+th+th+th {
+    width: 60px;
 }
+
+
 /*edit/delete buttons  */
-.tableHead>tr>th:first-child + th + th + th + th{
-   width: 115px;   
+
+.tableHead>tr>th:first-child+th+th+th+th {
+    width: 115px;
 }
-.tableElement{
-    cursor: pointer;    
+
+.tableElement {
+    cursor: pointer;
 }
+
+
 /*name and icon  */
-.tableElement>td:first-child{
+
+.tableElement>td:first-child {
     width: 10vw;
 }
-.musicLogo{
+
+.musicLogo {
     height: 25px;
     width: 25px;
     margin-right: 10px;
     object-fit: cover;
     float: left;
 }
+
+
 /*delete edit icons  */
-.icons>img{
+
+.icons>img {
     width: 30px;
     height: 30px;
     object-fit: cover;
@@ -167,15 +214,70 @@ body {
 
 
 /*Fixed search footer   */
-.panel-footer{
+
+.panel-footer {
     display: flex;
-        margin-bottom: 15px;
+    margin-bottom: 15px;
 }
+
+
+/*ALBUM DETAIL START  */
+
+.albumDetail {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 66vh;
+}
+
+.detailLogo {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+  /* default image  */
+.detailLogo img {
+    display: block; 
+}
+/* hover image */
+.detailLogo+img { 
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    right: 80px;   
+}
+.detailLogo  .musicLogoBig {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+}
+.musicLogoBig:hover{
+  cursor: pointer;
+    border: 1px solid rgb(234, 134, 68);
+}
+.detailLogo .musicLogoHover{
+    height: 60px;
+    width: auto;
+    display: none;
+} 
+.detailLogo:hover  .musicLogoHover{
+    display: block !important;
+}
+.detailLogo:hover{
+  
+}
+/*ALBUM DETAIL END  */
+
+
 /*Main BODY END  */
 
 
 /*ADDITIONS  */
+
+
 /*change scrollbar  */
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
@@ -189,4 +291,34 @@ body {
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #999;
+}
+
+
+/*change bootstrap btns  */
+.btn-default {
+    font-family: Helvetica !important;
+    color: white !important;
+    background: rgb(169, 109, 163)!important;
+    border: none !important;
+    border-radius: 0 !important;
+    text-shadow: none !important;
+    /*font-size: 12px !important;*/
+}
+
+.btn-default:hover {
+    background: rgb(100, 57, 96) !important;
+    transition: 1s !important;
+    border: none !important;
+}
+
+.btnMore {
+    background: rgb(234, 134, 68) !important;
+}
+
+.label-danger {
+    background: gray !important;
+}
+
+.label-primary {
+    background: #201d1d !important;
 }

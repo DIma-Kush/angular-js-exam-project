@@ -15,13 +15,27 @@
                 $stateProvider
                     .state("mainList", {
                         url: '/mainList',
-                        templateUrl: 'app/templates/mainList.html'
+                        templateUrl: 'app/templates/mainList.html',
+                        resolve: {
+                            'title': ['storageService', '$rootScope', function ($rootScope) {
+                                $rootScope.title = "Songs list";
+                            }]
+                        }
 
                     })
-                    .state("favorites", {
-                        url: '/favorites',
+                    .state("addAlbum", {
+                        url: '/addAlbum',
                         templateUrl: 'app/templates/addSong.html'
 
+                    })
+                    .state("albumDetail",{
+                        url: '/albumDetail',
+                        templateUrl: 'app/templates/albumDetail.html',
+                         resolve: {
+                            'title': ['storageService', '$rootScope', function (storageService, $rootScope) {
+                                $rootScope.title = storageService.get("albumName");
+                            }]
+                        }
                     })
                 $urlRouterProvider.otherwise('/mainList');
             }
@@ -36,7 +50,16 @@
             }
 
         ]);
-
+   app.factory('storageService', [function () {
+        return {
+            get: function (key) {
+                return localStorage.getItem(key);
+            },
+            save: function (key, data) {
+                localStorage.setItem(key, data);
+            }
+        };
+    }]);
     app.factory('albumService', ['$resource', function ($resource) {
         return $resource('/albums/all', {}, {
              get: {
@@ -51,6 +74,16 @@
             return arr;
           }
         },
+            getId:{
+                method: 'GET',
+                url:'/albums/get/:id',
+                 interceptor: {
+                    response: function (response) {
+                        // expose response
+                        return response;
+                    }
+                }
+            },
         count: {
             method: 'GET',
             url: '/albums/count',

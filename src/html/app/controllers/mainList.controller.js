@@ -1,17 +1,22 @@
 (function () {
-   app.controller('MainListCtrl',['$scope', 'albumService', function (
-        $scope, albumService
+    app.controller('MainListCtrl', ['$scope','albumService','storageService', '$state', function (
+        $scope, albumService, storageService, $state
     ) {
         'use strict';
-        // console.log(albumService.get());
-        // albumService.get();
-               $scope.albums = albumService.get(); //load data 
-                     console.log($scope.albums);
+        $scope.albums.value = albumService.get(); //load data 
+        console.log($scope.albums.value);
 
-                     
-             albumService.count(function (response) {
-                    $scope.count = response.data.value;
-                    });
-       
+        $scope.albumDetail = function (id) {
+            $scope.curAlbum.value = $scope.albums.value[id];
+            console.log(id);
+            console.log($scope.curAlbum.value);
+            storageService.save("albumId", id);
+            $state.go('albumDetail');
+        }
+
+        albumService.count(function (response) {
+            $scope.count = response.data.value;
+        });
+
     }]);
 })();

@@ -1,0 +1,12 @@
+<section ng-controller="AlbumDetailCtrl" class="albumDetail">
+    <div class="detailLogo"  class="albumImage">
+       <div class="detailLogo"> 
+               <img class="musicLogo musicLogoBig" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
+        </div>
+    <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
+     
+    </div>
+    <h3>{{curAlbum.value.artist}}</h3>
+    <h2>{{curAlbum.value.title}}</h2>
+
+</section>
