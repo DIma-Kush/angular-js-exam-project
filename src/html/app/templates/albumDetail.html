@@ -1,12 +1,39 @@
-<section ng-controller="AlbumDetailCtrl" class="albumDetail">
-    <div class="detailLogo"  class="albumImage">
-       <div class="detailLogo"> 
-               <img class="musicLogo musicLogoBig" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
+<section ng-controller="AlbumDetailCtrl" class="albumDetail animated fadeIn ">
+    <!--Background-->
+    <article class="background row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columnMasc">
+            <figure class="backgroundImage">
+                <!--editing background and page-->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button class="editProfile btn btn-default  pull-right" ng-click="editAlbumClick()"><img src="img/edit.png" alt="edit">Edit Album</button>
+                        <button class="deleteProfile btn btn-default  pull-left">  <img src="img/recycleBin.png" alt="del">Delete</button>
+                    </div>
+                </div>
+            </figure>
         </div>
-    <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
-     
+    </article>
+    <!--detail infromation  -->
+    <div class="detailLogo" class="albumImage">
+        <div class="detailLogo">
+            <img class="musicLogo musicLogoBig" ng-src="{{ result.image || 'img/defaultLogo.png' }}" alt="logo">
+        </div>
+        <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
+
     </div>
     <h3>{{curAlbum.value.artist}}</h3>
     <h2>{{curAlbum.value.title}}</h2>
+    <article>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h4>Country: {{curAlbum.value.country}}</h4>
+                <h4>Company: {{curAlbum.value.company}}</h4>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h4>Price: ${{curAlbum.value.price}}</h4>
+                <h4>Year: {{curAlbum.value.year}}</h4>
+            </div>
+        </div>
+    </article>
 
 </section>

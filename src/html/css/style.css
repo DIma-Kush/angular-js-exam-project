@@ -8,7 +8,7 @@
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
-    overflow-y: hidden;
+     /* overflow-y: hidden;  */
     overflow-x: hidden;
 }
 
@@ -139,7 +139,7 @@ body {
 .panel {
     margin: 15px 0px 15px 15px;
     margin-bottom: 0px !important;
-    height: 66vh;
+    height: 63.2vh;
     overflow-x: hidden;
 }
 
@@ -224,13 +224,44 @@ body {
 /*ALBUM DETAIL START  */
 
 .albumDetail {
-    padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 66vh;
+     min-height: 92vh; 
+}
+.background{
+    height: 175px;
+    width: 100%;
+}
+.backgroundImage{
+    height: 225px;
+    width: 100%;
+    background-size: cover;
+    background-image: url("../img/bg.JPG"); 
+}
+.columnMasc{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.editProfile, .saveProfile{
+    margin-top: 155px;
+    margin-right: 20px;
+}
+.deleteProfile {
+    margin-top: 155px;
+    margin-left: 20px;
 }
 
+.editProfile img, .deleteProfile img, .saveProfile img{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+.saveProfile{
+    position: absolute;
+    top:0;
+    right: 20px;
+}
 .detailLogo {
     display: inline-block;
     position: relative;
@@ -265,7 +296,7 @@ body {
     display: block !important;
 }
 .detailLogo:hover{
-  
+  cursor: pointer;
 }
 /*ALBUM DETAIL END  */
 
@@ -273,7 +304,7 @@ body {
 /*Main BODY END  */
 
 
-/*ADDITIONS  */
+/*ADDITIONS START */
 
 
 /*change scrollbar  */
@@ -322,3 +353,5 @@ body {
 .label-primary {
     background: #201d1d !important;
 }
+
+/*ADDITIONS END */

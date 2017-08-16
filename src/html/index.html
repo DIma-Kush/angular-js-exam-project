@@ -9,10 +9,11 @@
     <title>Lemberg Music</title>
     <!--CSS START  -->
     <!--Normalize.css-->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <!--user styles-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mediaQueries.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/mediaQueries.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
     <!--libs syles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
@@ -20,22 +21,23 @@
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
+
 <body ng-cloak ng-controller="MainCtrl">
 
-<div id="wrappper">
-    <div class="container-fluid">
-        <div class="container custom-container">
-            <div class="row">
-                <!--Header-->
-                <site-header></site-header>
-                <!--Navigation-->
-                <site-sidebar></site-sidebar>
-                <!--Main body-->
-                <site-router></site-router>
+    <div id="wrappper">
+        <div class="container-fluid">
+            <div class="container custom-container">
+                <div class="row">
+                    <!--Header-->
+                    <site-header></site-header>
+                    <!--Navigation-->
+                    <site-sidebar></site-sidebar>
+                    <!--Main body-->
+                    <site-router></site-router>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!--Script Libs START-->
     <!-- jQuery (only for bootstrap libs!)-->
@@ -57,6 +59,8 @@
     <script src="app/controllers/mainController.controler.js"></script>
     <script src="app/controllers/mainList.controller.js"></script>
     <script src="app/controllers/albumDetail.controller.js"></script>
+    <script src="app/controllers/albumEdit.controller.js"></script>
+    <script src="app/controllers/albumAdd.controller.js"></script>
     <script src="app/directives.js"></script>
     <!--Scripts Libs END  -->
 </body>

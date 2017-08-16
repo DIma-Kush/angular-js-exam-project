@@ -27,6 +27,9 @@
     .navbar-brand {
     display: none ;
   }
+  .form-group{
+    margin-left: 60px;
+  }
 }
 /*desktop  */
 @media (min-width: 768px) {
@@ -66,5 +69,11 @@
     padding-right: 10px !important;
   }
   
+}
+/*bootstrap SM  */
+@media (min-width: 768px) and (max-width: 992px) {
+ .form-group{
+    margin-left: 60px;
+  }
 }
 
