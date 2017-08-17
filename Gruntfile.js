@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
@@ -16,6 +16,21 @@ module.exports = function(grunt) {
 			unit: {
 				options: {
 					files: [
+						//libs
+						'src/html/js/libs/underscore-min.js',
+						'src/html/js/libs/angular.min.js',
+						'src/html/js/libs/angular-ui-router.min.js',
+						'src/html/libs/angular-resource.min.js',
+						// user files
+						"src/html/app/app.js",
+						"src/html/app/controllers-modules/navigation.controller.js",
+						"src/html/app/controllers-modules/mainController.controler.js",
+						"src/html/app/controllers-modules/mainList.controller.js",
+						"src/html/app/controllers-modules/albumDetail.controller.js",
+						"src/html/app/controllers-modules/albumAddEdit.controller.js",
+						"src/html/app/controllers-modules/albumDelete.controller.js",
+						"src/html/app/directives.js",
+						//tests
 						'src/tests/*.js',
 					],
 					frameworks: ['jasmine'],

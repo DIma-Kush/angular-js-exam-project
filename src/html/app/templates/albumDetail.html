@@ -15,8 +15,8 @@
     </article >
     <!--detail infromation  -->
     <div class="detailLogo" class="albumImage">
-        <div class="detailLogo">
-            <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
+        <div class="detailLogo" ui-sref="albumAddEdit">
+            <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png"  alt="logo">
         </div>
         <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
 

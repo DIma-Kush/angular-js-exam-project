@@ -325,6 +325,7 @@ body {
 .detailLogo .musicLogoBig {
     width: 200px;
     height: 200px;
+    margin-bottom: 25px;
 }
 
 .musicLogoBig:hover {
@@ -366,6 +367,11 @@ body {
 }
 .deleteButtons *{
     width: 100px;
+}
+.musicLogoDel{
+    border:0px; 
+    float:none; 
+    margin-right:0px;
 }
 /*ALBUM DELETE END  */
 

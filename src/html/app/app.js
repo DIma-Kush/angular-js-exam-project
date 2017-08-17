@@ -6,7 +6,6 @@
         "controllers",
         'ui.router',
         'ngResource'
-
     ]);
 
     // Routing START  
