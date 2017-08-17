@@ -14,7 +14,7 @@
       <a ng-click="goBack()">
         <figure class="arrowLeftMobile"></figure>
       </a>
-      <a class="headerName" ng-bind="title">{{curAlbum.value.title}}</a>
+      <a class="headerName" ng-bind="title"></a>
     </div>
 
     <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
@@ -23,7 +23,7 @@
           <div class="MobileUserSideBar">
             <ul class="nav navbar-nav mineNavbar">
               <li><a ui-sref="mainList">Music list</a></li>
-              <li><a ui-sref-opts="{reload: true}"  ui-sref="albumAddEdit" ng-click="editAlbumClick('addMode')">Add album</a></li>
+              <li><a ui-sref-opts="{reload: true}"  ui-sref="albumAddEdit" ng-click="editAlbumClick(-1,'addMode')">Add album</a></li>
             </ul>
           </div>
         </li>

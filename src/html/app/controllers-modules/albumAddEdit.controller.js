@@ -1,4 +1,5 @@
 (function () {
+    var app = angular.module('album-add-edit', ['controllers']);
     app.controller('AlbumEditAddCtrl', ['$scope', '$state', 'albumService', 'storageService', function (
         $scope, $state, albumService, storageService) {
         'use strict';
@@ -20,8 +21,8 @@
                 'logoUrl': $scope.curAlbum.value.logoUrl || ''
             }
             data.price = data.price.toString(); // library operate only with strings
-            var data_string = JSON.stringify(data);
-
+            var data_string = JSON.stringify(data); // stringdify to send
+            // switch proceed button
             switch (flag) {
                 case 'editMode':
                     albumService.update({
@@ -50,6 +51,7 @@
         // switching add or edit flags which was set as parameter in global editAlbumClick function
         switch (flag) {
             case 'editMode':
+               
                 $scope.editMode = 'editMode';
                 storageService.save("flag", $scope.editMode); // save flag to LS
                 var albumId = storageService.get("albumId"); // get id from LS 
@@ -59,8 +61,9 @@
                     },
                     function (response) {
                         $scope.curAlbum.value = response.data;
+                        // $scope.title = "edit ";
                         console.log($scope.curAlbum.value);
-                        //   storageService.save("albumName","edit " + $scope.curAlbum.value.title); // save album name to LS
+                        
                     });
                 break;
             case 'addMode':

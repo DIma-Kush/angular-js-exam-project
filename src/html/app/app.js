@@ -1,11 +1,12 @@
 (function () {
     var app = angular.module("musicShop", [
+        // 'albumsList',
         "site-directives",
-        "angularCSS",
-        "Controllers",
+        "navigation",
+        "controllers",
         'ui.router',
-        'ui.bootstrap',
         'ngResource'
+
     ]);
 
     // Routing START  
@@ -16,25 +17,19 @@
                     .state("mainList", {
                         url: '/mainList',
                         templateUrl: 'app/templates/mainList.html',
-                        resolve: {
-                            'title': ['storageService', '$rootScope', function ($rootScope) {
-                                $rootScope.title = "Songs list";
-                            }]
-                        }
-
+                        
                     })
                     .state("albumDetail", {
                         url: '/albumDetail',
-                        templateUrl: 'app/templates/albumDetail.html',
-                        resolve: {
-                            'title': ['storageService', '$rootScope', function (storageService, $rootScope) {
-                                $rootScope.title = storageService.get("albumName");
-                            }]
-                        }
+                        templateUrl: 'app/templates/albumDetail.html'
                     })
                     .state("albumAddEdit", {
                         url: '/albumAddEdit',
                         templateUrl: 'app/templates/albumAddEdit.html'
+                    })
+                    .state("albumDelete", {
+                        url: '/albumDelete',
+                        templateUrl: 'app/templates/albumDelete.html'
                     })
                 $urlRouterProvider.otherwise('/mainList');
             }
@@ -59,12 +54,14 @@
             }
         };
     }]);
+
+    // Album REST service
     app.factory('albumService', ['$resource', function ($resource) {
         return $resource('/albums/all', {}, {
             get: {
                 method: 'GET',
                 isArray: true,
-                transformResponse: function (data) {
+                transformResponse: function (data) { // transform array data
                     var arr = [];
                     var data_obj = JSON.parse(data);
                     _.each(data_obj, function (obj) {
@@ -113,6 +110,16 @@
                     }
                 }
             },
+            delete: {
+                method: 'DELETE',
+                url: '/albums/delete/:id',
+                interceptor: {
+                    response: function (response) {
+
+                        return response;
+                    }
+                }
+            }
         });
     }]);
 

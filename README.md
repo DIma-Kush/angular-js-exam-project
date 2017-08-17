@@ -7,10 +7,23 @@ sub tasks planning:
 - work with Karma and Jasmine
 - Release 
 
-Promo(16.08.17):
-<img src="src/html/img/preview.JPG" alt="page preview">
-<img src="src/html/img/preview_detail.JPG" alt="page preview">
+Program specification:
+  -controllers/models: in this app we are using model hierarchy based on scopes.
+  Every model are incapsulated into anonymous function due to hide objects for overwriting.
+  -There is a main model with its's mainControler which inherit other sub models(mainList, albumDetail,albumAddEdit, albumDelete) and their controllers.
+- They, in turn, inherited from model "songShop", which also inherit directives and route services
+- REST API was implemented with library ngResource
+- some function was implemented with underCore lib
+- using ui-router instead standart angularJs router
 
+
+ScreenShots(17.08.17):
+-Main page:
+<img src="src/html/img/preview.JPG" alt="page preview">
+-Detail info (mobile version):
+<img src="src/html/img/preview_detail.JPG" alt="page preview detail">
+-Delete album (extra small mobile version):
+<img src="src/html/img/preview_delete.JPG" alt="page preview delete">
 ## Required Technologies
  - [AngularJS](https://angularjs.org/)
  - [Twitter Bootstrap](http://getbootstrap.com/)

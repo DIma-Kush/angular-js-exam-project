@@ -3,14 +3,15 @@
 
     <article class="background row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columnMasc">
-            <figure class="backgroundImage">
-            </figure>
+            <figure class="backgroundImage backgroundImageEdit" data-ng-if="editMode"></figure>
+            <figure class="backgroundImage backgroundImageAdd" data-ng-if="addMode"></figure>
         </div>
     </article>
     <!--detail infromation  -->
     <div class="detailLogo" class="albumImage">
         <div class="detailLogo">
-            <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
+            <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png"
+                alt="logo">
         </div>
         <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
 
@@ -22,12 +23,20 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                 <div class="form-group">
+                    <label for="logo">Album logo (URL)</label>
+                    <input id="logo" type="text" class="form-control" placeholder="Enter album logo URL here" data-ng-model="curAlbum.value.logoUrl">
+                    <hr>
+                </div>
+                <div class="form-group">
                     <label for="title">Album title</label>
                     <input id="title" name="title" type="text" class="form-control" placeholder="Enter album title here" data-ng-model="curAlbum.value.title"
                         required>
                     <p class="err-mes" data-ng-show="form.title.$error.required"><span class="glyphicon glyphicon-exclamation-sign"></span> Title is required</p>
                     <hr>
                 </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                 <div class="form-group">
                     <label for="artist">Artist</label>
                     <input id="artist" name="artist" type="text" class="form-control" placeholder="Enter artist here" data-ng-model="curAlbum.value.artist"
@@ -35,18 +44,22 @@
                     <p class="err-mes" data-ng-show="form.artist.$error.required"><span class="glyphicon glyphicon-exclamation-sign"></span> Artist is required</p>
                     <hr>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                 <div class="form-group">
                     <label for="country">Country</label>
                     <input id="country" type="text" class="form-control" placeholder="Enter country here" data-ng-model="curAlbum.value.country">
                     <hr>
                 </div>
+
+
                 <div class="form-group">
                     <label for="company">Company</label>
                     <input id="company" type="text" class="form-control" placeholder="Enter company here" data-ng-model="curAlbum.value.company">
                     <hr>
                 </div>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                 <div class="form-group">
                     <label for="year">Year</label>
                     <input id="year" type="text" name="year" data-ng-pattern="/^[0-9]{1,4}?$/" class="form-control" placeholder="Enter year here"
@@ -54,9 +67,6 @@
                     <p class="err-mes" data-ng-show="form.year.$error.pattern"><span class="glyphicon glyphicon-exclamation-sign"></span> Value not valid</p>
                     <hr>
                 </div>
-
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
                 <div class="form-group">
                     <label for="price">Price</label>
                     <input id="price" name="price" type="text" data-ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="form-control" placeholder="Enter price here"
@@ -65,11 +75,7 @@
                     <p class="err-mes" data-ng-show="form.price.$error.pattern"><span class="glyphicon glyphicon-exclamation-sign"></span> Price should be decimal</p>
                     <hr>
                 </div>
-                <div class="form-group">
-                    <label for="logo">Album logo (URL)</label>
-                    <input id="logo" type="text" class="form-control" placeholder="Enter album logo URL here" data-ng-model="curAlbum.value.logoUrl">
-                    <hr>
-                </div>
+
             </div>
         </div>
     </form>

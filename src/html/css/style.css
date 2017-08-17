@@ -8,7 +8,7 @@
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
-     /* overflow-y: hidden;  */
+    /* overflow-y: hidden;  */
     overflow-x: hidden;
 }
 
@@ -50,13 +50,15 @@ body {
 
 .navbarToggleMasc {
     border-radius: 0px !important;
-     pointer-events: all;
+    pointer-events: all;
 }
-.nabvarHeaderMine{
+
+.nabvarHeaderMine {
     height: 50px;
     text-align: center;
     pointer-events: none;
 }
+
 .arrowLeftMobile {
     background-image: url("../img/arrowLeftWhite.png");
     background-size: cover;
@@ -65,7 +67,7 @@ body {
     margin-top: 5px;
     margin-left: 15px;
     cursor: pointer;
-     pointer-events: all;
+    pointer-events: all;
 }
 
 .headerName {
@@ -227,79 +229,146 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-     min-height: 92vh; 
+    min-height: 91vh;
 }
-.background{
+.detailInfo *{
+    text-align: center;
+}
+
+.background {
     height: 175px;
     width: 100%;
 }
-.backgroundImage{
+
+.backgroundImage {
     height: 225px;
     width: 100%;
+    /*parallax  */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../img/bg.JPG"); 
 }
-.columnMasc{
+
+.backgroundImageAdd {
+    background-image: url("../img/bg_add.JPG");
+}
+
+.backgroundImageEdit {
+    background-image: url("../img/bg_edit.JPG");
+}
+
+.backgroundImageDetail {
+    background-image: url("../img/bg.JPG");
+}
+.backgroundImageDelete {
+    background-image: url("../img/bg_delete.JPG");
+     background-attachment: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+}
+.columnMasc {
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
-.editProfile, .saveProfile{
-    margin-top: 155px;
+
+.editProfile,
+.saveProfile {
+    margin-top: 145px;
     margin-right: 20px;
+    z-index: 2;
 }
+
 .deleteProfile {
-    margin-top: 155px;
+     z-index: 2;
+    margin-top: 145px;
     margin-left: 20px;
 }
 
-.editProfile img, .deleteProfile img, .saveProfile img{
+.editProfile img,
+.deleteProfile img,
+.saveProfile img {
     height: 20px;
     width: 20px;
     margin-right: 5px;
 }
-.saveProfile{
+
+.saveProfile {
     position: absolute;
-    top:0;
+    top: 0;
     right: 20px;
 }
+
 .detailLogo {
     display: inline-block;
     position: relative;
     z-index: 1;
 }
-  /* default image  */
+
+
+/* default image  */
+
 .detailLogo img {
-    display: block; 
+    display: block;
 }
+
+
 /* hover image */
-.detailLogo+img { 
+
+.detailLogo+img {
     position: absolute;
     z-index: 1;
     top: 65px;
-    right: 80px;   
+    right: 80px;
 }
-.detailLogo  .musicLogoBig {
+
+.detailLogo .musicLogoBig {
     width: 200px;
     height: auto;
     max-width: 100%;
 }
-.musicLogoBig:hover{
-  cursor: pointer;
+
+.musicLogoBig:hover {
+    cursor: pointer;
     border: 1px solid rgb(234, 134, 68);
 }
-.detailLogo .musicLogoHover{
+
+.detailLogo .musicLogoHover {
     height: 60px;
     width: auto;
     display: none;
-} 
-.detailLogo:hover  .musicLogoHover{
+}
+
+.detailLogo:hover .musicLogoHover {
     display: block !important;
 }
-.detailLogo:hover{
-  cursor: pointer;
-}
-/*ALBUM DETAIL END  */
 
+.detailLogo:hover {
+    cursor: pointer;
+}
+
+
+/*ALBUM DETAIL END  */
+/*ALBUM DELETE START  */
+.deleteHeader
+{
+    padding: 40px;
+    padding-top: 65px;  
+    text-align: center;
+    /* border-top: 1px solid gray; */
+}
+.deleteButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 56vw;
+    padding-bottom: 30px;
+     border-bottom: 1px solid gray;
+     box-shadow: 0 4px 4px -4px grey;
+}
+.deleteButtons *{
+    width: 100px;
+}
+/*ALBUM DELETE END  */
 
 /*Main BODY END  */
 
@@ -326,6 +395,7 @@ body {
 
 
 /*change bootstrap btns  */
+
 .btn-default {
     font-family: Helvetica !important;
     color: white !important;
@@ -353,5 +423,6 @@ body {
 .label-primary {
     background: #201d1d !important;
 }
+
 
 /*ADDITIONS END */

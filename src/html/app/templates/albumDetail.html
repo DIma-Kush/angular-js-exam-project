@@ -2,17 +2,17 @@
     <!--Background-->
     <article class="background row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columnMasc">
-            <figure class="backgroundImage">
+            <figure class="backgroundImage backgroundImageDetail">
                 <!--editing background and page-->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <button class="editProfile btn btn-default  pull-right"  ui-sref="albumAddEdit" ng-click="editAlbumClick('editMode')"><img src="img/edit.png" alt="edit">Edit Album</button>
-                        <button class="deleteProfile btn btn-default  pull-left">  <img src="img/recycleBin.png" alt="del">Delete</button>
+                        <button class="editProfile btn btn-default  pull-right" ui-sref-opts="{reload: true}"  ui-sref="albumAddEdit" ng-click="editAlbumClick(curAlbum.value.id, 'editMode')"><img src="img/edit.png" alt="edit">Edit Album</button>
+                        <button class="deleteProfile btn btn-default  pull-left" ui-sref-opts="{reload: true}" ui-sref="albumDelete" ng-click="deleteAlbumClick(curAlbum.value.id)"><img src="img/recycleBin.png" alt="del">Delete</button>
                     </div>
                 </div>
             </figure>
         </div>
-    </article>
+    </article >
     <!--detail infromation  -->
     <div class="detailLogo" class="albumImage">
         <div class="detailLogo">
@@ -21,9 +21,9 @@
         <img class="musicLogoHover" src="img/album_hover.png" alt="logo hover">
 
     </div>
+    <article class="detailInfo">
     <h3>{{curAlbum.value.artist}}</h3>
     <h2>{{curAlbum.value.title}}</h2>
-    <article>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <h4>Country: {{curAlbum.value.country}}</h4>
@@ -34,6 +34,5 @@
                 <h4>Year: {{curAlbum.value.year}}</h4>
             </div>
         </div>
-    </article>
-
+</article>
 </section>

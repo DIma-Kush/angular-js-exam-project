@@ -1,8 +1,5 @@
 (function () {
-
-    "use strict";
-    var app = angular.module("site-directives", []);
-
+    var app = angular.module("site-directives", ['musicShop']);
     app.directive("siteHeader", function () {
         return {
             restrict: "AE",

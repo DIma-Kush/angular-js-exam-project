@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody class="tableBody">
-                <tr class="tableElement" href="#!/albums/{{song.id}}" ng-click="albumDetailClick(song.id)" ng-repeat="song in albums.value  
+                <tr class="tableElement" ng-click="albumDetailClick(song.id)" ng-repeat="song in albums.value  
                     | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse 
                         track by song.id">
                     <td>
@@ -38,13 +38,13 @@
                     <td>
                         <!--trigger when tablet screen  -->
                         <div class="buttons">
-                            <button class="btn btn-default pull-right">Delete</button>
-                            <button class="btn btn-default  pull-right" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick('editMode')">Edit</button>
+                            <button class="btn btn-default pull-right" ui-sref="albumDelete" ng-click="$event.stopPropagation();deleteAlbumClick(song.id)">Delete</button>
+                            <button class="btn btn-default  pull-right" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick(song.id,'editMode')">Edit</button>
                         </div>
                         <!--trigger when mobile screen  -->
                         <div class="icons">
-                            <img src="img/edit.png" alt="edit" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick('editMode')">
-                            <img src="img/recycleBin.png" alt="del">
+                            <img src="img/edit.png" alt="edit" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick(song.id,'editMode')">
+                            <img src="img/recycleBin.png" alt="del" ui-sref="albumDelete" ng-click="$event.stopPropagation();deleteAlbumClick(song.id)">
                         </div>
                     </td>
 
