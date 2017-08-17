@@ -5,12 +5,13 @@
         'use strict';
 
         var albumId = storageService.get("albumId"); // get id from LS 
-
+                
        //    USING Underscore.js
         albumService.get({}, function (arr) {
             $scope.curAlbum.value = _.find(arr, function (obj) { // compare list
                 return obj.id == albumId; // by id. true - > proceed. undefined -> error
             });
+            
             console.log("SELF", $scope.curAlbum.value);
             storageService.save("albumName", $scope.curAlbum.value.title); // save album name to LS
         });

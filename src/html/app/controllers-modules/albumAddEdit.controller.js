@@ -24,7 +24,7 @@
             var data_string = JSON.stringify(data); // stringdify to send
             // switch proceed button
             switch (flag) {
-                case 'editMode':
+                case 'editMode': // EDIT CLICK
                     albumService.update({
                         id: albumId
                     }, data_string, function (response) {
@@ -34,7 +34,7 @@
                         console.log('err_resp', error.data);
                     });
                     break;
-                case 'addMode':
+                case 'addMode': // ADD CLICK
                     albumService.add({}, data_string, function (response) {
                         console.log(response.data);
                         $scope.curAlbum.value = response.data;
@@ -50,8 +50,8 @@
 
         // switching add or edit flags which was set as parameter in global editAlbumClick function
         switch (flag) {
-            case 'editMode':
-               
+            case 'editMode': // EDIT LOADED
+
                 $scope.editMode = 'editMode';
                 storageService.save("flag", $scope.editMode); // save flag to LS
                 var albumId = storageService.get("albumId"); // get id from LS 
@@ -63,10 +63,10 @@
                         $scope.curAlbum.value = response.data;
                         // $scope.title = "edit ";
                         console.log($scope.curAlbum.value);
-                        
+
                     });
                 break;
-            case 'addMode':
+            case 'addMode': // ADD LOADED
                 $scope.addMode = 'addMode';
                 storageService.save("flag", $scope.addMode); // save flag to LS
                 var data = {
@@ -82,9 +82,5 @@
 
                 break;
         }
-
-
-
-
     }]);
 })();

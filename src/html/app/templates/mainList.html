@@ -20,7 +20,7 @@
                     | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse 
                         track by song.id">
                     <td>
-                      <img class="musicLogo musicLogoBig" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
+                      <img class="musicLogo musicLogoBig" data-ng-src="{{ song.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
                         
                         <p>{{song.title}}</p>
                     </td>

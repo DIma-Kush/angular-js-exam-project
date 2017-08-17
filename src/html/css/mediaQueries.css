@@ -68,6 +68,11 @@
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
+  .detailLogo .musicLogoBig {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+}
   
 }
 /*bootstrap SM  */
