@@ -3,17 +3,21 @@
 ### sub tasks planning:
 - 15.08.17 - creating html layout, routing and directives
 - 16.08.17 - 17.08.17 creating operating angular function(add, edit show, delete)
-- modify Gruntfile.js, add minify css/js (and probably merge)
+- 17.08.17 modify Gruntfile.js
 - work with Karma and Jasmine
 - Release 
 
 ScreenShots(17.08.17):
 ### Main page:
 <img src="src/html/img/preview.JPG" alt="page preview">
+
 ### Detail info (mobile version):
 <img src="src/html/img/preview_detail.JPG" alt="page preview detail">
+
 ### Delete album (extra small mobile version):
 <img src="src/html/img/preview_delete.JPG" alt="page preview delete">
+
+
 ## Required Technologies
  - [AngularJS](https://angularjs.org/)
  - [Twitter Bootstrap](http://getbootstrap.com/)

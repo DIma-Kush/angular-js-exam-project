@@ -10,10 +10,8 @@
     <!--CSS START  -->
     <!--Normalize.css-->
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <!--user styles-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/mediaQueries.css" type="text/css">
-    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <!--user minified styles-->
+    <link rel="stylesheet" href="css/style.min.css" type="text/css">
     <!--libs syles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
@@ -49,16 +47,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-mocks.js"></script>
     <!--user scripts  -->
     <!--App-->
-    <script src="app/app.js"></script>
-    <!--Controllers/Directives-->
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.services.js"></script>
+    <!--Controllers-->
     <script src="app/controllers-modules/navigation.controller.js"></script>
     <script src="app/controllers-modules/mainController.controler.js"></script>
     <script src="app/controllers-modules/mainList.controller.js"></script>
     <script src="app/controllers-modules/albumDetail.controller.js"></script>
     <script src="app/controllers-modules/albumAddEdit.controller.js"></script>
     <script src="app/controllers-modules/albumDelete.controller.js"></script>
+    <!--Directives-->
     <script src="app/directives.js"></script>
     <!--Scripts Libs END  -->
 </body>

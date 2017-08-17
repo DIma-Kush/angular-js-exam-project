@@ -10,8 +10,18 @@ module.exports = function (grunt) {
 			build: {
 				src: 'src/*.js',
 				dest: 'build/*.min.js'
-			}
+			},
 		},
+		cssmin: {
+			dist: {
+			   options: {
+				  banner: '/*! MyLib.js 1.0.0 | Aurelio De Rosa (@AurelioDeRosa) | MIT Licensed */'
+			   },
+			   files: {
+				  'src/html/css/style.min.css': ['src/html/css/**/*.css']
+			   }
+		   }
+		 },
 		karma: {
 			unit: {
 				options: {
@@ -20,9 +30,11 @@ module.exports = function (grunt) {
 						'src/html/js/libs/underscore-min.js',
 						'src/html/js/libs/angular.min.js',
 						'src/html/js/libs/angular-ui-router.min.js',
-						'src/html/libs/angular-resource.min.js',
+						'src/html/js/libs/angular-resource.min.js',
+						'src/html/js/libs/angular-mocks.js',
 						// user files
-						"src/html/app/app.js",
+						"src/html/app/app.modules.js",
+						"src/html/app/app.services.js",
 						"src/html/app/controllers-modules/navigation.controller.js",
 						"src/html/app/controllers-modules/mainController.controler.js",
 						"src/html/app/controllers-modules/mainList.controller.js",
@@ -31,7 +43,7 @@ module.exports = function (grunt) {
 						"src/html/app/controllers-modules/albumDelete.controller.js",
 						"src/html/app/directives.js",
 						//tests
-						'src/tests/*.js',
+						'src/tests/*.js'
 					],
 					frameworks: ['jasmine'],
 					plugins: ['karma-jasmine', 'karma-phantomjs-launcher'],
@@ -45,6 +57,7 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-karma');
 
@@ -67,8 +80,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('start_server', start_server);
 	grunt.registerTask('test', ['karma']);
-	grunt.registerTask('start', ['test', 'start_server']);
+	grunt.registerTask('start', ['cssmin', 'test', 'start_server']);
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'start']);
+	grunt.registerTask('default', ['cssmin','uglify', 'start']);
 };

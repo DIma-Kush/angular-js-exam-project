@@ -51,7 +51,8 @@ bower_components/
 node_modules/
 bower_components/
 spec/
-
+jasmine_examples/
+helpers/
 ###Linux###
 
 *~
