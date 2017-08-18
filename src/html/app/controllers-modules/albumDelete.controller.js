@@ -1,5 +1,6 @@
 (function () {
     var app = angular.module('album-delete', ['controllers']);
+ 
     app.controller('AlbumDeleteCtrl', ['$scope','$state', 'albumService', 'storageService', function (
         $scope, $state, albumService, storageService) {
         'use strict';

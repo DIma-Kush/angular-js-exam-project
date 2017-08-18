@@ -9,6 +9,7 @@
 
 ### Program overview:
 This program allows user to add, edit delete, sort some list of music that can arrive from server.
+To type image example, paste in corresponding input this: "img/albums/selena.jpg" 
 
 ### Program specification:
 - Controllers/models. In this app we are using model hierarchy based on scopes.
@@ -25,7 +26,9 @@ This program allows user to add, edit delete, sort some list of music that can a
 ScreenShots(17.08.17):
 ### Main page:
 <img src="src/html/img/preview.JPG" alt="page preview">
+
 ### Detail info (mobile version):
 <img src="src/html/img/preview_detail.JPG" alt="page preview detail">
+
 ### Delete album (extra small mobile version):
 <img src="src/html/img/preview_delete.JPG" alt="page preview delete">

@@ -53,6 +53,9 @@
   .MobileUserSideBar {
     display: none;
   } 
+  .deleteButtons *{
+    margin: 0px;
+  }
 }
 /*extra small  */
 @media (max-width: 460px) {

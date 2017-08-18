@@ -367,6 +367,8 @@ body {
 }
 .deleteButtons *{
     width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .musicLogoDel{
     border:0px; 
