@@ -8,6 +8,9 @@
           },
           save: function (key, data) {
               localStorage.setItem(key, data);
+          },
+          remove: function(key) {
+              localStorage.removeItem(key);
           }
       };
   }]);

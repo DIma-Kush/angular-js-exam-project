@@ -8,19 +8,23 @@
                     .state("mainList", {
                         url: '/mainList',
                         templateUrl: 'app/templates/mainList.html',
+                        controller:'MainListCtrl'
                         
                     })
                     .state("albumDetail", {
                         url: '/albumDetail',
-                        templateUrl: 'app/templates/albumDetail.html'
+                        templateUrl: 'app/templates/albumDetail.html',
+                        controller:'AlbumDetailCtrl'
                     })
                     .state("albumAddEdit", {
                         url: '/albumAddEdit',
-                        templateUrl: 'app/templates/albumAddEdit.html'
+                        templateUrl: 'app/templates/albumAddEdit.html',
+                        controller:'AlbumEditAddCtrl'
                     })
                     .state("albumDelete", {
                         url: '/albumDelete',
-                        templateUrl: 'app/templates/albumDelete.html'
+                        templateUrl: 'app/templates/albumDelete.html',
+                        controller:'AlbumDeleteCtrl'
                     })
                 $urlRouterProvider.otherwise('/mainList');
             }

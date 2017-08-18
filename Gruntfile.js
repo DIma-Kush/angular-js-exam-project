@@ -83,5 +83,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('start', ['cssmin', 'test', 'start_server']);
 
 	// Default task(s).
-	grunt.registerTask('default', ['cssmin','uglify', 'start']);
+	grunt.registerTask('default', ['uglify', 'start']);
 };

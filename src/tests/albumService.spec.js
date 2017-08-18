@@ -1,4 +1,4 @@
-// test Album factory(app.js file) for geting data from server
+// test Album factory(app.services.js file) for geting data from server
 'use strict';
 
 describe('albumServiceTest', function() {
@@ -39,7 +39,7 @@ describe('albumServiceTest', function() {
     beforeEach(module('musicShop'));
   
     // Instantiate the service and "train" `$httpBackend` before each test
-    beforeEach(inject(function(_$httpBackend_, _albumService_) {
+    beforeEach(inject(function(_$httpBackend_, _albumService_) { // underScore wrapping
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('/albums/all').respond(albumsGetDataSendedStr);
  
@@ -62,7 +62,7 @@ describe('albumServiceTest', function() {
       $httpBackend.flush();
       expect(albums).toEqual(albumsGetDataExpected);
   
-      console.log('-----------------------GET TEST SUCCESS --------------------------------------');
+      console.log('-----------------------albumService GET TEST SUCCESS --------------------------------------');
     });
   
   });
