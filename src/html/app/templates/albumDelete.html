@@ -4,12 +4,12 @@
             <figure class="backgroundImage backgroundImageDelete"></figure>
         </div>
     </article>
-    <h2 class="deleteHeader">You are going to delete   <img  class="musicLogo musicLogoDel" ng-src="{{ curAlbum.value.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png"
-                alt="logo">  "{{curAlbum.value.title}}" album. Are you sure?</h2>
+    <h2 class="deleteHeader">You are going to delete   <img  class="musicLogo musicLogoDel" ng-src="{{ $ctrl.album.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png"
+                alt="logo">  "{{$ctrl.album.title}}" album. Are you sure?</h2>
   
     <div class="deleteButtons">
-        <button class="btn btn-default" ui-sref-opts="{reload: true}" ui-sref="mainList" ng-click="delAlbum()">Accept</button>
-        <button class="btn btn-default btnMore" ng-click="goBack()">Cancel</button>
+        <button class="btn btn-default" ui-sref-opts="{reload: true}"  ng-click="$ctrl.delAlbum()">Accept</button>
+        <button class="btn btn-default btnMore" onclick="window.history.back();">Cancel</button>
     </div>
     </div>
 </section>

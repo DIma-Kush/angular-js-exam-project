@@ -1,23 +1,6 @@
 (function () {
     var app = angular.module("site-directives", ['musicShop']);
-    app.directive("siteHeader", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "app/templates/header.html"
-        };
-    });
-    app.directive("siteSidebar", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "app/templates/sideMenu.html"
-        };
-    });
-    app.directive("siteRouter", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "app/templates/router.html"
-        }
-    });
+   
     // Collapsing directive for mobile
     app.directive('navCollapse', function () {
         return {

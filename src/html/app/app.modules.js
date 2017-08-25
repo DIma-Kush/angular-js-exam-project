@@ -2,8 +2,10 @@
     'use strict';
     var app = angular.module("musicShop", [
         "site-directives",
-        "navigation",
-        "controllers",
+        "main-list",
+        "album-detail",
+        "album-add-edit",
+        "album-delete",
         'ui.router',
         'ngResource'
     ]);

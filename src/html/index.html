@@ -20,18 +20,67 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
 
-<body ng-cloak ng-controller="MainCtrl">
+<body ng-cloak>
 
     <div id="wrappper">
         <div class="container-fluid">
             <div class="container custom-container">
                 <div class="row">
                     <!--Header-->
-                    <site-header></site-header>
+                    <header class="navbar navbar-inverse navbarTop navbar-fixed-top">
+                        <div class="container containerHeader">
+                            <div class="navbar-header nabvarHeaderMine">
+                                <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true" data-target="#responsive-menu">
+                                            <span class="sr-only">Open navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+
+                                <a ui-sref="mainList" class="navbar-brand">
+                                    <p> Lemberg Music </p>
+                                    <img class="logo" src="img/logo.png" alt="logo"></a>
+                                <a onclick="window.history.back();">
+                                    <figure class="arrowLeftMobile"></figure>
+                                </a>
+                                <a class="headerName" ng-bind="title"></a>
+                            </div>
+
+                            <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown">
+                                        <div class="MobileUserSideBar">
+                                            <ul class="nav navbar-nav mineNavbar">
+                                                <li><a ui-sref="mainList">Music list</a></li>
+                                                <li><a ui-sref-opts="{reload: true}" ui-sref="albumAddEdit({albumId:null, flag: 'addMode'})">Add album</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
                     <!--Navigation-->
-                    <site-sidebar></site-sidebar>
+                    <nav class="col-lg-2 col-md-2 col-sm-3 col-xs-0">
+                        <div class="classWithPad">
+                            <div class="sidebar-nav userSideBar">
+                                <div class="navbar navbar-default userNavbar">
+                                    <div class="navbar-header">
+                                        <ul class="nav navbar-nav asideNavbar">
+                                            <li ui-sref-active="active"><a ui-sref="mainList">Music List</a></li>
+                                            <li ui-sref-active="active"><a ui-sref-opts="{reload: true}" ui-sref="albumAddEdit({albumId:null, flag: 'addMode'})">Add album</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                     <!--Main body-->
-                    <site-router></site-router>
+                    <main class="col-lg-10 col-md-10 col-sm-9 col-xs-12 mainRouter">
+                        <div class="classWithPad userMainBody">
+                            <ui-view/>
+                        </div>
+                    </main>
                 </div>
             </div>
         </div>
@@ -54,12 +103,10 @@
     <script src="app/app.config.js"></script>
     <script src="app/app.services.js"></script>
     <!--Controllers-->
-    <script src="app/controllers-modules/navigation.controller.js"></script>
-    <script src="app/controllers-modules/mainController.controler.js"></script>
-    <script src="app/controllers-modules/mainList.controller.js"></script>
-    <script src="app/controllers-modules/albumDetail.controller.js"></script>
-    <script src="app/controllers-modules/albumAddEdit.controller.js"></script>
-    <script src="app/controllers-modules/albumDelete.controller.js"></script>
+    <script src="app/components/main-list.component.js"></script>
+    <script src="app/components/album-detail.component.js"></script>
+    <script src="app/components/album-add-edit.component.js"></script>
+    <script src="app/components/album-delete.component.js"></script>
     <!--Directives-->
     <script src="app/directives.js"></script>
     <!--Scripts Libs END  -->

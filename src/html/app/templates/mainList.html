@@ -1,23 +1,23 @@
-<div class="mainPanel animated fadeIn " ng-controller="MainListCtrl">
+<div class="mainPanel animated fadeIn ">
     <article>
         <h3>Listen your favourite music!</h3>
         <!-- <h3>Listen your favourite music!</h3> -->
-        <h2>available albums: {{count}}</h2>
+        <h2>available albums: {{$ctrl.count}}</h2>
     </article>
     <section class="panel">
         <table class="table table-hover">
             <thead class="tableHead">
                 <tr>
-                    <th ng-click="sortBy('name')">Name</th>
-                    <th ng-click="sortBy('name')">Artist</th>
-                    <th ng-click="sortBy('integer')">Price</th>
-                    <th ng-click="sortBy('integer')">Year</th>
+                    <th ng-click="$ctrl.sortBy('name')">Name</th>
+                    <th ng-click="$ctrl.sortBy('name')">Artist</th>
+                    <th ng-click="$ctrl.sortBy('integer')">Price</th>
+                    <th ng-click="$ctrl.sortBy('integer')">Year</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody class="tableBody">
-                <tr class="tableElement" ng-click="albumDetailClick(song.id)" ng-repeat="song in albums.value  
-                    | limitTo: limitMin | filter:search  | orderBy:propertyName:reverse 
+                <tr class="tableElement" ng-click="$ctrl.albumDetailClick(song.id)" ng-repeat="song in $ctrl.albums  
+                    | limitTo: $ctrl.limitMin | filter:search  | orderBy:$ctrl.propertyName:$ctrl.reverse 
                         track by song.id">
                     <td>
                       <img class="musicLogo musicLogoBig" data-ng-src="{{ song.logoUrl || 'img/defaultLogo.png' }}" err-src="img/defaultLogo.png" alt="logo">
@@ -38,13 +38,13 @@
                     <td>
                         <!--trigger when tablet screen  -->
                         <div class="buttons">
-                            <button class="btn btn-default pull-right" ui-sref="albumDelete" ng-click="$event.stopPropagation();deleteAlbumClick(song.id)">Delete</button>
-                            <button class="btn btn-default  pull-right" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick(song.id,'editMode')">Edit</button>
+                            <button class="btn btn-default pull-right" ui-sref="albumDelete({albumId:song.id})" ng-click="$event.stopPropagation();">Delete</button>
+                            <button class="btn btn-default  pull-right" ui-sref="albumAddEdit({albumId:song.id, flag: 'editMode'})" ng-click="$event.stopPropagation();">Edit</button>
                         </div>
                         <!--trigger when mobile screen  -->
                         <div class="icons">
-                            <img src="img/edit.png" alt="edit" ui-sref="albumAddEdit" ng-click="$event.stopPropagation();editAlbumClick(song.id,'editMode')">
-                            <img src="img/recycleBin.png" alt="del" ui-sref="albumDelete" ng-click="$event.stopPropagation();deleteAlbumClick(song.id)">
+                            <img src="img/edit.png" alt="edit" ui-sref="albumAddEdit({albumId:song.id, flag: 'editMode'})" ng-click="$event.stopPropagation();">
+                            <img src="img/recycleBin.png" alt="del" ui-sref="albumDelete({albumId:song.id})" ng-click="$event.stopPropagation();">
                         </div>
                     </td>
 
@@ -55,8 +55,8 @@
     </section>
     <footer class="input-group  panel-footer">
         <input placeholder="search" class="form-control" data-ng-model="search"> <span class="input-group-btn">
-                <button class="btn btn-default btnMore" ng-click="clickMore()">More</button>
-                <button class="btn btn-default" ng-click="clickLess()">Less</button>
+                <button class="btn btn-default btnMore" ng-click="$ctrl.clickMore()">More</button>
+                <button class="btn btn-default" ng-click="$ctrl.clickLess()">Less</button>
                </span>
     </footer>
 </div>

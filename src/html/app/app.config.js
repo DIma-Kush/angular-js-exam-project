@@ -7,28 +7,30 @@
                 $stateProvider
                     .state("mainList", {
                         url: '/mainList',
-                        templateUrl: 'app/templates/mainList.html',
-                        controller:'MainListCtrl',
-                          resolve: {
+                        template: '<main-list></main-list>',
+                        resolve: {
                             'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Lemberg Music"; 
+                                $rootScope.title = "Songs list"; // delegate page title
                             }]
                         } 
                     })
                     .state("albumDetail", {
-                        url: '/albumDetail',
-                        templateUrl: 'app/templates/albumDetail.html',
-                        controller:'AlbumDetailCtrl',
+                        url: '/albumDetail/:albumId',
+                        template: '<album-detail></album-detail>',
+                        params:{albumId:null},
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Your album"; // delegate page title
+                                $rootScope.title = "Your album"; 
                             }]
                         } 
                     })
                     .state("albumAddEdit", {
-                        url: '/albumAddEdit',
-                        templateUrl: 'app/templates/albumAddEdit.html',
-                        controller:'AlbumEditAddCtrl',
+                        url: '/albumAddEdit/:albumId/:flag',
+                        template: '<album-add-edit></album-add-edit>',
+                        params:{
+                            albumId:null,
+                            flag:null
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "perfect your album";
@@ -36,15 +38,16 @@
                         } 
                     })
                     .state("albumDelete", {
-                        url: '/albumDelete',
-                        templateUrl: 'app/templates/albumDelete.html',
-                        controller:'AlbumDeleteCtrl',
+                        url: '/albumDelete/:albumId',
+                        template: '<album-delete></album-delete>',
+                        params:{
+                            albumId:null
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Delete album";
                             }]
                         } 
-                        // component:'album-delete',
                     })
                 $urlRouterProvider.otherwise('/mainList');
             }

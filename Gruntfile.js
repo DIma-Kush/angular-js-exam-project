@@ -35,12 +35,10 @@ module.exports = function (grunt) {
 						// user files
 						"src/html/app/app.modules.js",
 						"src/html/app/app.services.js",
-						"src/html/app/controllers-modules/navigation.controller.js",
-						"src/html/app/controllers-modules/mainController.controler.js",
-						"src/html/app/controllers-modules/mainList.controller.js",
-						"src/html/app/controllers-modules/albumDetail.controller.js",
-						"src/html/app/controllers-modules/albumAddEdit.controller.js",
-						"src/html/app/controllers-modules/albumDelete.controller.js",
+						"src/html/app/components/main-list.component.js",
+						"src/html/app/components/album-detail.component.js",
+						"src/html/app/components/album-add-edit.component.js",
+						"src/html/app/components/album-delete.component.js",
 						"src/html/app/directives.js",
 						//tests
 						'src/tests/*.js'
