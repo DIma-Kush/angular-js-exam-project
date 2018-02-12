@@ -7,6 +7,7 @@
   "author": "Put Your Name Here",
   "license": "ISC",
   "dependencies": {
+    "asyncawait": "^1.0.6",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.16.6",
